@@ -37,6 +37,7 @@ public class ServiceItem extends BaseEntity {
     @JoinColumn(name = "diary_id")
     private Diary diary;
 
+    @Builder.Default
     @OneToMany(mappedBy = "serviceItem")
     private List<MemberItem> memberItemList = new ArrayList<>();
 

@@ -34,10 +34,12 @@ public class Diary extends BaseEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "diary_emotion_id")
     private DiaryEmotion diaryEmotion;
 
+    @Builder.Default
     @OneToMany(mappedBy = "diary", cascade = CascadeType.ALL)
     private List<ServiceItem> serviceItemList = new ArrayList<>();
 

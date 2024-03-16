@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @Builder
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member extends BaseEntity {
@@ -32,9 +33,11 @@ public class Member extends BaseEntity {
 
     private LocalDate birthDay;
 
+    @Builder.Default
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Diary> diaryList = new ArrayList<>();
 
+    @Builder.Default
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<MemberItem> memberItemList = new ArrayList<>();
 
