@@ -11,6 +11,6 @@ public class TempQueryServiceImpl implements TempQueryService{
     @Override
     public void CheckFlag(Integer flag) {
         if (flag == 1)
-            throw new TempHandler(ErrorStatus.MEMBER_NOT_FOUND);
+            throw new TempHandler(ErrorStatus._MEMBER_NOT_FOUND);
     }
 }

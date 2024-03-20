@@ -14,12 +14,16 @@ public enum ErrorStatus implements ErrorCode {
     _BAD_REQUEST(HttpStatus.BAD_REQUEST,"COMMON400","잘못된 요청입니다."),
     _UNAUTHORIZED(HttpStatus.UNAUTHORIZED,"COMMON401","인증이 필요합니다."),
     _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "금지된 요청입니다."),
+    _NOT_FOUND(HttpStatus.NOT_FOUND, "COMMON404", "요청을 찾을 수 없습니다."),
 
     // 멤버 관련 응답
-    MEMBER_NOT_FOUND(HttpStatus.BAD_REQUEST, "MEMBER4001", "사용자가 없습니다."),
-    NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MEMBER4002", "닉네임은 필수 입니다.");
+    _MEMBER_NOT_FOUND(HttpStatus.BAD_REQUEST, "MEMBER4001", "사용자가 없습니다."),
+    _NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MEMBER4002", "닉네임은 필수 입니다."),
 
-    // ~~~ 관련 응답 ....
+    // 토큰 관련 응답
+    _INVALID_ACCESS_TOKEN(HttpStatus.BAD_REQUEST, "TOKEN4001", "Invalid access token."),
+    _INVALID_REFRESH_TOKEN(HttpStatus.BAD_REQUEST, "TOKEN4002", "Invalid refresh token."),
+    _NOT_EXPIRED_TOKEN_YET(HttpStatus.BAD_REQUEST, "TOKEN4003", "Not expired token yet.");
 
 
     private final HttpStatus httpStatus;
